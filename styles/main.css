@@ -70,6 +70,7 @@ p {
 img {
   display: block;
   width: 100%;
+  height: auto;
 }
 
 /* temp fix until we style articles */
@@ -101,21 +102,18 @@ aside p {
   padding-right: 2rem;
 }
 
-/* if you are interested in how I created the triangle footer, 
-   I used Clippy - CSS clip-path maker at https://bennettfeely.com/clippy/ 
-   I don't really like the look of it, but I wanted to demo clip path*/
 footer {
   background-color: var(--main-color);
-  clip-path: polygon(0 0, 0% 100%, 100% 100%);
   color: #fff;
   font-family: "Fira Sans", sans-serif;
   font-size: 2em;
   margin-top: 12rem;
-  padding: 12rem 1rem 2rem;
+  padding: 4rem 1rem 6rem;
 }
 
 footer p {
-  width: 50%;
+  text-align: center;
+  margin: 0;
 }
 
 dt {
@@ -275,6 +273,9 @@ a:focus {
 
   /* flexbox can position the text better - so this is fine for now */
   padding: 20% 1rem 0;
+
+  /* clear out any preset margins */
+  margin: 0;
 
   opacity: 0;
 

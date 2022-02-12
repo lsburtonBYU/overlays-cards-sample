@@ -101,46 +101,50 @@
 
 
   <div class="cards">
-    <a>
-      <span class="card">
-        <span class="image-wrapper">
-          <img src="images/card-1-400px.jpg" alt="spy pigeon peering around a corner">
-        </span>
-        <span class="overlay">
+    <div class="card">
+      <a>
+        <!-- adding width and height attributes to the HTML will allow the 
+             browser to estimate the size of an image and leave space for it
+             before it loads (no text "jumping" down when an image loads). To 
+             make this work with responsive images use this CSS:
+                img {
+                  width: 100%;
+                  height: auto; 
+                } -->
+        <img src="images/card-1-400px.jpg" width="400" height="400" loading="lazy"
+          alt="spy pigeon peering around a corner">
+        <p class="overlay">
           You are never alone
-        </span>
-      </span>
-    </a>
-    <a>
-      <span class="card">
-        <span class="image-wrapper">
-          <img src="images/card-2-400px.jpg" alt="mob of pigeons ready to attack humans">
-        </span>
-        <span class="overlay">
+        </p>
+      </a>
+    </div>
+    <div class="card">
+      <a>
+        <img src="images/card-2-400px.jpg" width="400" height="400" loading="lazy"
+          alt="mob of pigeons ready to attack humans">
+        <p class="overlay">
           Your worst nightmare
-        </span>
-      </span>
-    </a>
-    <a>
-      <span class="card">
-        <span class="image-wrapper">
-          <img src="images/card-3-400px.jpg" alt="pigeon drones attacking a helpless human">
-        </span>
-        <span class="overlay">
+        </p>
+      </a>
+    </div>
+    <div class="card">
+      <a>
+        <img src="images/card-3-400px.jpg" width="400" height="400" loading="lazy"
+          alt="pigeon drones attacking a helpless human">
+        <p class="overlay">
           Another victim of the government
-        </span>
-      </span>
-    </a>
-    <a>
-      <span class="card">
-        <span class="image-wrapper">
-          <img src="images/card-4-400px.jpg" alt="lab worker developing secret pigeon serum">
-        </span>
-        <span class="overlay">
+        </p>
+      </a>
+    </div>
+    <div class="card">
+      <a>
+        <img src="images/card-4-400px.jpg" width="400" height="400" loading="lazy"
+          alt="lab worker developing secret pigeon serum">
+        <p class="overlay">
           Government lab secrets
-        </span>
-      </span>
-    </a>
+        </p>
+      </a>
+    </div>
   </div>
 
   <footer>
