@@ -1,0 +1,291 @@
+:root {
+  --text-color: #333;
+
+  /* dark green */
+  --main-color-dark: #19270d;
+
+  /* pine green */
+  /* I used Smart Swatch to lighten the main color https://smart-swatch.netlify.app/ */
+  --main-color: #25591f;
+  --main-color-light: #38842f;
+  --main-color-extra-light: #c8ecc4;
+
+  /* hollyhock */
+  --highlight-color: #833471;
+  --highlight-color-dark: #6f1e51;
+  --highlight-color-light: #b53471;
+
+  /* squirrel red */
+  --squirrel-red: #72601b;
+
+  /* tree bark */
+  --pine-bark: #593a0e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/**************************/
+/****** main classes ******/
+/**************************/
+body {
+  color: var(--text-color);
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fira Sans", sans-serif;
+  line-height: 1.2;
+  margin: 2em 0 0.5em;
+}
+
+h1 {
+  color: var(--main-color-dark);
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+h2,
+h3 {
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/* temp fix until we style articles */
+article img {
+  width: auto;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 50rem;
+  padding: 0 1rem;
+}
+
+article {
+  margin-bottom: 4rem;
+}
+
+aside {
+  background-color: var(--highlight-color);
+  color: #fff;
+  margin-top: 6rem;
+  padding: 3rem;
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+aside p {
+  text-align: right;
+  padding-right: 2rem;
+}
+
+/* if you are interested in how I created the triangle footer, 
+   I used Clippy - CSS clip-path maker at https://bennettfeely.com/clippy/ 
+   I don't really like the look of it, but I wanted to demo clip path*/
+footer {
+  background-color: var(--main-color);
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  color: #fff;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 2em;
+  margin-top: 12rem;
+  padding: 12rem 1rem 2rem;
+}
+
+footer p {
+  width: 50%;
+}
+
+dt {
+  color: var(--highlight-color);
+  font-weight: bold;
+}
+
+blockquote {
+  margin: 0;
+}
+
+/*******************************/
+/***** general link styles *****/
+/*******************************/
+
+/* the :link pseudo class targets a's with href (or links).
+   this won't apply to dead links (without an href) */
+a:link {
+  color: var(--squirrel-red);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:visited {
+  color: var(--squirrel-red);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* DEAD LINKS: if an <a> does not have an href, don't apply the hover effect 
+  you could also use a:not(:link):hover */
+a:not([href]):hover {
+  text-decoration: none;
+}
+
+/* focus occurs when the user navigates the page with the keyboard [TAB].
+   browser default is usually an outline */
+a:focus {
+  background-color: var(--squirrel-red);
+  color: #fff;
+}
+
+/* general utility styles */
+
+/* overlay is used by hero and cards */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/**************************/
+/***** button styles ******/
+/**************************/
+.button {
+  background-color: var(--highlight-color);
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 14px;
+  padding: 8px 15px;
+  margin-top: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* this makes it so the user can select the text, which keeps the cursor from turning into a text selection cursor */
+  user-select: none;
+}
+
+.button:hover {
+  background-color: var(--highlight-color-dark);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.button:active {
+  background-color: var(--highlight-color);
+  box-shadow: none;
+}
+
+.button:focus {
+  background-color: var(--highlight-color-dark);
+  /* using box shadow this way will create a border without upsetting the layout by changing the dimensions of the button like border would do */
+  box-shadow: 0 0 0 2px var(--highlight-color-light) inset;
+  color: #fff;
+}
+
+/**************************/
+/****** hero overlay ******/
+/**************************/
+.hero {
+  position: relative;
+}
+
+.hero .overlay {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent 70%);
+}
+
+.hero .text-group {
+  /* flex box will make centering easier. This is just a fix using position */
+  position: absolute;
+  top: 40%;
+  text-align: center;
+
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #fff;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+  font-family: "Fira Sans", sans-serif;
+  color: #fff;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+/**************************/
+/****** card styles *******/
+/**************************/
+.cards {
+  display: flex;
+  gap: 1rem;
+
+  margin: 12rem 1.5rem 0 1.5rem;
+}
+
+/* the cards are wrapped in an <a>, which is
+   an inline element. Technically, in HTML,
+   inline elements can only contain other inline 
+   elements, so I use <spans> instead of <divs>.
+   I then essentially change the <span>s to <div>s
+   by setting them to block display in the CSS. */
+.cards span {
+  display: block;
+}
+
+.card {
+  position: relative;
+}
+
+.card .overlay {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 1.8rem;
+  line-height: 1.1;
+
+  /* flexbox can position the text better - so this is fine for now */
+  padding: 20% 1rem 0;
+
+  opacity: 0;
+
+  transition: opacity 300ms ease;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+/****** form styles  *****/
+.form img {
+  width: 400px;
+}
