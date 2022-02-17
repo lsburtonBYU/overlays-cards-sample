@@ -251,16 +251,6 @@ a:focus {
   margin: 12rem 1.5rem 0 1.5rem;
 }
 
-/* the cards are wrapped in an <a>, which is
-   an inline element. Technically, in HTML,
-   inline elements can only contain other inline 
-   elements, so I use <spans> instead of <divs>.
-   I then essentially change the <span>s to <div>s
-   by setting them to block display in the CSS. */
-.cards span {
-  display: block;
-}
-
 .card {
   position: relative;
 }
